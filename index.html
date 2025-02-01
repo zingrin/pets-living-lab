@@ -11,70 +11,132 @@
   <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap"
     rel="stylesheet">
 
+  <!-- tailwind-->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.6/daisyui.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+
   <!-- font awesome cdn -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- DaisyUI cdn-->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.6/daisyui.css" rel="stylesheet" type="text/css" />
-  <!-- tailwind cdn -->
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
   <!-- config -->
- 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+            sora: ["Sora", "serif"],
+            adlam: ["ADLaM Display", "serif"],
+
+          }
+        }
+      }
+    }
+  </script>
 
 </head>
 
 <body>
-  <header class="bg-[#FFF9F4]">
+  <header>
     <!-- navbar section -->
-    <nav class="flex justify-between items-center py-4 max-w-screen-xl  mx-auto">
-      <div class="flex items-center gap-2">
-        <img src="./c1-assets/logo-header.png" alt="">
-        <h3 class="md:text-2xl  font-sora text-xl text-[#111111]">Browses<span class="text-[#FFDC26]">4</span> Pets</h3>
-      </div>
-      <div>
-        <ul class="text-xl font-sora text-[#111111] space-x-6">
-          <a href="">Find a pet</a>
-          <a href="">Breeds</a>
-          <a href="">Contact us</a>
-        </ul>
-      </div>
-      <!-- nav buttons and search -->
-      <div class="space-x-4 font-sora">
-        <i class="fa-regular fa-bell text-lg cursor-pointer"></i>
-        <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer"></i>
-        <button class="btn border-2 border-yellow-500 btn-outline  ">Login</button>
-        <button class="btn bg-[#FFDC26] hover:bg-neutral hover:text-white ">Register</button>
-      </div>
-
-    </nav> 
-  </header>
-  <!-- banner section -->
-  <section class="max-w-screen-xl mx-auto bg-[url('./')] 
-    ">
-    <div class=" text-left mt-16 space-y-10 ">
-      <h1 class="text-5xl font-ADLaM ">Pamper Your Pet,<br> Because They Deserve <br> the Bes</h1>
-      <p class="text-[#111111 font-sora]">Discover a world of treats, toys, and essentials handpicked for <br>
-        your furry friends. Shop now and make tails wag with joy!</p>
-      <button class="btn bg-[#FFDC26] hover:bg-neutral hover:text-white">Find a Pet</button>
-    </div>
     
-  </section>
+        
+    
+        <nav class="flex justify-between  bg-[#FFF9F4] items-center px-4 py-4 max-w-screen-xl  mx-auto">
+          <div class="flex items-center gap-2">
+            <img src="./c1-assets/logo-header.png" alt="">
+            <div class="hidden lg:block">
+              <h3 class="md:text-2xl text-xl font-sora text-[#111111]">Browses<span class="text-[#FFDC26]">4</span> Pets</h3>
+    
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <ul class="  flex justify-between space-x-6  ">
+              <li> <a class="font-sora text-xl" href="#">Find a pet</a> </li>
+              <li> <a class="font-sora text-xl" href="#">Breeds</a> </li>
+              <li> <a class="font-sora text-xl" href="#">Contact us</a> </li>
+            </ul>
+          </div>
+          <!-- nav buttons and search -->
+          <div class="space-x-4 font-sora hidden sm:block">
+            <i class="fa-regular fa-bell text-lg cursor-pointer"></i>
+            <i class="fa-solid fa-magnifying-glass text-lg cursor-pointer"></i>
+            <button class="btn border-2 border-yellow-500 btn-outline  ">Login</button>
+            <button class="btn bg-[#FFDC26] hover:bg-neutral hover:text-white ">Register</button>
+          </div>
+          <!-- icon -->
+           <div class="block sm:hidden coursor-pointer space-x-9">
+            <i class="fa-solid fa-bars text-2xl"></i>
+    
+           </div>
+    
+        </nav>
+    
+    
+     <!-- banner section -->
+     <section class="max-w-[90%] mx-auto min-h-96 lg:min-h-screen  bg-image [url(./c1-assets/cat-big.png)] background-repeat: no-repeat;
+      background-position: bottom right; background-size: contain">
+      
+
+     <h1 class="font-adlam text-3xl md:text-6xl md:mt-10 lg:mt-16 mt-4">
+       Pamper Your Pet, <br> Because They Deserve <br> the Bes
+     </h1>
+     <p class="max-w-[90%] lg:max-w-[50%] mt-8 mb-8">Discover a world of treats, toys, and essentials handpicked for
+       your furry friends. Shop now and make tails wag with joy!</p>
+
+     <button class=" font-sora btn bg-[#FFDC26] hover:bg-neutral hover:text-white">Find a pet</button>
+
+  </header>
+ 
   <!--categories section  -->
-  <section class="max-w-screen-xl mx-auto">
-    <div class="mt-16">
-      <h2 class="text-4 font-ADLaM Display ">Browse By Categories</h2>
-    </div>
-    <div>
-      <h4>Dog</h4>
-      <small>3 items</small>
-    </div>
+  <section class="px-4 md:px-20 md:py-8 md:mt-6 mt-4">
+    <h1 class="font-adlam text-2xl md:text-4xl ">Browse By Categories</h1>
+    
+      <div class="container grid gap-1 grid-cols-2 lg:grid-cols-6 md:gap-8 items-center mt-8">
+        <!-- card -->
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/dog-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/fish-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/cat-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/bird-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/mouse-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
+        <div class="bg-[#F9DF8A] py-4 px-8 rounded-lg  ">
+          <img class="bg-white p-4 rounded-full" src="./c1-assets/rabbit-cartoon.png " alt="">
+          <h1 class="font-adlam text-xl py-2">Dog</h1>
+          <p class="text-sm font-sora">3 Items</p>
+        </div>
   </section>
   <!-- main section -->
   <main></main>
   <!-- footer section -->
-  <footer></footer>
+
+ 
+  
 </body>
 
 </html>
